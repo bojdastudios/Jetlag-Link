@@ -5,7 +5,7 @@
       const params = new URLSearchParams(window.location.search);
       const id = params.get("id");
       if (id) {
-        window.location.href = "mygame://invite?id=" + id;
+        window.location.href = "jetlag://ask?id=" + id;
       } else {
         document.body.innerHTML = "<p>Missing ID</p>";
       }
@@ -15,3 +15,4 @@
     <p>Redirecting to the app...</p>
   </body>
 </html>
+
