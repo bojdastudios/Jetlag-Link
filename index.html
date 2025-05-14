@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Redirecting…</title>
+    <title>Redirecting to app...</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
       function openApp() {
@@ -9,20 +9,19 @@
         const id = params.get("id");
 
         if (!id) {
-          document.body.innerHTML = "<p>❌ Missing ID in the URL.</p>";
+          document.body.innerHTML = "<p>Missing ID</p>";
           return;
         }
 
-        // Debug (remove alert when working)
-        alert("Redirecting with ID: " + id);
+        const deepLink = "jetlag://ask?id=" + id;
 
         // Use iframe method
         const iframe = document.createElement("iframe");
         iframe.style.display = "none";
-        iframe.src = "jetlag://ask?id=" + id;
+        iframe.src = deepLink;
         document.body.appendChild(iframe);
 
-        // Optional fallback
+        // Optional fallback if app not installed
         // setTimeout(() => {
         //   window.location.href = "https://play.google.com/store/apps/details?id=com.yourcompany.jetlag";
         // }, 2000);
@@ -32,6 +31,9 @@
     </script>
   </head>
   <body>
+    <p>Redirecting to the app…</p>
+  </body>
+</html>
     <p>Redirecting to the app…</p>
   </body>
 </html>
