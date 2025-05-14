@@ -2,15 +2,12 @@
 <html>
   <head>
     <script>
-      // Get ID from URL
       const params = new URLSearchParams(window.location.search);
       const id = params.get("id");
-
-      // Redirect to your app's deep link with that ID
       if (id) {
         window.location.href = "mygame://invite?id=" + id;
       } else {
-        document.body.innerHTML = "<p>Missing ID in the URL</p>";
+        document.body.innerHTML = "<p>Missing ID</p>";
       }
     </script>
   </head>
